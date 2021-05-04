@@ -1,0 +1,31 @@
+{
+  "name": "ppt",
+  "version": "1.0.0",
+  "description": "ts ppt example",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -c jest.config.js --runInBand"
+  },
+  "license": "",
+  "devDependencies": {
+    "@types/expect-puppeteer": "^4.4.5",
+    "@types/jest": "^26.0.23",
+    "@types/jest-environment-puppeteer": "^4.4.1",
+    "@types/node": "^15.0.1",
+    "@types/puppeteer": "^5.4.3",
+    "@typescript-eslint/parser": "4.9.0",
+    "eslint": "7.15.0",
+    "jest": "^26.6.3",
+    "jest-environment-puppeteer": "^5.0.3",
+    "jest-expect-message": "^1.0.2",
+    "jest-puppeteer": "^5.0.3",
+    "log4js": "^6.1.2",
+    "puppeteer": "^9.0.0",
+    "ts-jest": "^26.5.5",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@types/jest-expect-message": "^1.0.3"
+  }
+}

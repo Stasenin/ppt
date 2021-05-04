@@ -1,0 +1,8 @@
+{
+  "baseUrl": "",
+  "credentials": {
+    "login": "",
+    "password": ""
+  },
+  "browser": "chrome"
+}
