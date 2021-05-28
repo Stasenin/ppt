@@ -1,5 +1,5 @@
 import {BasePage} from "./basePage";
-
+import * as config from "../../config/config.json"
 
 export class ProfilePage extends BasePage {
     private _container: string = '.container';
@@ -7,7 +7,7 @@ export class ProfilePage extends BasePage {
 
     constructor() {
         super('Profile Page')
-        this.url = 'https://www.sbzend.ssls.com/user/profile';
+        this.url = `${config.baseUrl}/user/profile`;
     }
     public async getProfileDataList(): Promise<any[]> {
         let profileData: any[] = []

@@ -36,20 +36,11 @@ describe("test", () => {
         await authorizationPage.password.setInputValue(`123456`)
         bundlesPage = await authorizationPage.login()
         await bundlesPage.waitLoaded()
-
-        /*
-         1. "Click on triangle near the "User@email" button" - ?? There is no separate selector for triangle itself. Is there should be a separate selector for this?
-         2. Profile or profile? - is this option should be in lowercase like in step 3?
-         */
         await (await bundlesPage.openUserDropdownAndGetContentList())
         await (await bundlesPage.clickItemInDropDownByName('Profile'))
         const profilePage = new ProfilePage()
         await profilePage.waitLoaded() // checks that Profile page is opened
         const profileDataList = await profilePage.getProfileDataList()
-        /*
-         1. "Click on triangle near the "User@email" button" - ?? There is no separate selector for triangle itself. Is there should be a separate selector for this?
-         2. Profile or profile? - is this option should be in lowercase like in step 3?
-         */
         expect(profileDataList, 'User@email should be displayed').toEqual(profileDataListExpected)
     })
 })

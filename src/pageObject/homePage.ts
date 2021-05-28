@@ -1,5 +1,6 @@
 import {BasePage} from "./basePage";
 import {AuthorizationPage} from "./authorizationtPage";
+import * as config from "../../config/config.json"
 
 
 export class HomePage extends BasePage {
@@ -8,7 +9,7 @@ export class HomePage extends BasePage {
 
     constructor() {
         super('base page')
-        this.url = 'https://www.sbzend.ssls.com';
+        this.url = `${config.baseUrl}`;
     }
 
     public async openAuthorizationPage(): Promise<AuthorizationPage> {

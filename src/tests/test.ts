@@ -26,8 +26,6 @@ describe("test", () => {
         await (await authorizationPage.password.eye)?.click()
         expect( await (await authorizationPage.password.input)?.evaluate(
             node => node.value),'password should be displayed').toEqual(`invalidPwd`);
-
-        // check an error msg or notification msg? were this msg is actually should be displayed?
         expect(await (await authorizationPage.email.error)?.evaluate(
             node => node.innerText), `Error message is not displayed or incorrect`)
             .toEqual(`Uh oh! Email or password is incorrect`);
@@ -45,11 +43,6 @@ describe("test", () => {
             node => node.value), 'password should be displayed').toEqual(`123456`);
         bundlesPage = await authorizationPage.login()
         await bundlesPage.waitLoaded()
-        /*
-         1. "from the LEFT side in the Header of the page" - "Log in" button was on the RIGHT side of the Header. So, were button actually should be?
-         2. And how to check without opening that this button is the "button (with dropdown menu)", maybe we should make an additional step and open the dropdown?
-         'coz checking an element if it classes contains .ssls-dropdown__toggle class is not really accurate, on my opinion
-        */
         expect(await bundlesPage.isUserBtnIsDisplayed(), 'User@email should be displayed').toBeTruthy();
     })
 })

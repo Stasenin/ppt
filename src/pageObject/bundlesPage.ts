@@ -1,6 +1,7 @@
 import {BasePage} from "./basePage";
 import {InputGroup} from "./controls/inputGroup";
 import {ElementHandle} from "puppeteer";
+import * as config from "../../config/config.json"
 
 
 export class BundlesPage extends BasePage {
@@ -11,7 +12,7 @@ export class BundlesPage extends BasePage {
 
     constructor() {
         super('Bundles Page')
-        this.url = 'https://www.sbzend.ssls.com/user/bundles';
+        this.url = `${config.baseUrl}/user/bundles`;
     }
     get userBtn(): Promise<ElementHandle<Element> | null> {
         return page.$(this._userBtn)

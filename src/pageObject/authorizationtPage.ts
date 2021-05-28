@@ -2,6 +2,7 @@ import {BasePage} from "./basePage";
 import {InputGroup} from "./controls/inputGroup";
 import {ElementHandle} from "puppeteer";
 import {BundlesPage} from "./bundlesPage";
+import * as config from "../../config/config.json"
 
 
 export class AuthorizationPage extends BasePage {
@@ -13,7 +14,7 @@ export class AuthorizationPage extends BasePage {
 
     constructor() {
         super('Authorization Page')
-        this.url = 'https://www.sbzend.ssls.com/authorize';
+        this.url = `${config.baseUrl}/authorize`;
     }
     get notification(): Promise<ElementHandle<Element> | null> {
         return page.$(this._notification)
